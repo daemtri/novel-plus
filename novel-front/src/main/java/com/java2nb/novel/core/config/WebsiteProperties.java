@@ -17,4 +17,5 @@ public class WebsiteProperties {
     private String keyword;
     private String description;
     private String qq;
+    private String icp;
 }

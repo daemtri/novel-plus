@@ -29,6 +29,9 @@ public class WebsiteInfo {
     private String logoDark;
 
     @Generated("org.mybatis.generator.api.MyBatisGenerator")
+    private String icp;
+
+    @Generated("org.mybatis.generator.api.MyBatisGenerator")
     private Date createTime;
 
     @Generated("org.mybatis.generator.api.MyBatisGenerator")
@@ -118,6 +121,16 @@ public class WebsiteInfo {
     @Generated("org.mybatis.generator.api.MyBatisGenerator")
     public void setLogoDark(String logoDark) {
         this.logoDark = logoDark == null ? null : logoDark.trim();
+    }
+
+    @Generated("org.mybatis.generator.api.MyBatisGenerator")
+    public String getIcp() {
+        return icp;
+    }
+
+    @Generated("org.mybatis.generator.api.MyBatisGenerator")
+    public void setIcp(String icp) {
+        this.icp = icp == null ? null : icp.trim();
     }
 
     @Generated("org.mybatis.generator.api.MyBatisGenerator")

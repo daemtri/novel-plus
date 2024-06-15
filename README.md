@@ -57,6 +57,14 @@ novel-plus -- 父工程
 | Thymeleaf           | 模板引擎
 | Layui               | 前端 UI 框架
 
+## 项目打包
+
+novel-plus 根目录下执行打包命令
+
+```bash
+mvn clean package -Dmaven.test.skip
+```
+
 ## 项目截图
 
 ### 绿色主题模版

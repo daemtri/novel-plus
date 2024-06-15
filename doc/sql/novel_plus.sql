@@ -2932,7 +2932,7 @@ CREATE TABLE `website_info`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4 COMMENT ='网站信息表';
 
-INSERT INTO website_info (id, name, domain, keyword, description, qq, logo, logo_dark, create_time, create_user_id,
+INSERT INTO website_info (id, name, domain, keyword, description, qq, logo, logo_dark,icp, create_time, create_user_id,
                           update_time, update_user_id)
 VALUES (1, '小说精品屋', 'www.xxyopen.com', '小说精品屋,小说,小说CMS,原创文学系统,开源小说系统,免费小说建站程序',
         '小说精品屋是一个多端（PC、WAP）阅读、功能完善的原创文学CMS系统，由前台门户系统、作家后台管理系统、平台后台管理系统、爬虫管理系统等多个子系统构成，支持会员充值、订阅模式、新闻发布和实时统计报表等功能，新书自动入库，老书自动更新。',
