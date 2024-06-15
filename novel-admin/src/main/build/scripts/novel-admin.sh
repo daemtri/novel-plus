@@ -5,16 +5,16 @@ JAR_NAME=$APP_NAME\.jar
 PID=$APP_NAME\.pid
 
 
-#使用说明，用来提示输入参数
+#使用说明，用来提示输入参�?
 usage() {
     echo "Usage: ./novel-admin.sh [start|stop|restart|status]"
     exit 1
 }
 
-#检查程序是否在运行
+#�?查程序是否在运行
 is_exist(){
   pid=`ps -ef|grep $JAR_NAME|grep -v grep|awk '{print $2}' `
-  #如果不存在返回1，存在返回0     
+  #如果不存在返�?1，存在返�?0     
   if [ -z "${pid}" ]; then
    return 1
   else
@@ -26,13 +26,13 @@ is_exist(){
 start(){
   is_exist
   if [ $? -eq "0" ]; then 
-    echo ">>> 小说精品屋后台正在运行 PID = ${pid} <<<" 
+    echo ">>> 小说精品屋后台正在运�? PID = ${pid} <<<" 
   else 
-    echo ">>> 小说精品屋后台开始启动 <<<" 
+    echo ">>> 小说精品屋后台开始启�? <<<" 
     nohup java -jar -Dspring.profiles.active=prod $JAR_NAME >/dev/null 2>&1 &
     sleep 20
     echo $! > $PID
-    echo ">>> 小说精品屋后台启动完成 PID = $! <<<" 
+    echo ">>> 小说精品屋后台启动完�? PID = $! <<<" 
     status
    fi
   }
@@ -42,13 +42,13 @@ stop(){
   #is_exist
   pidf=$(cat $PID)
   #echo "$pidf"  
-  echo ">>> 小说精品屋后台 PID = $pidf 开始停止 <<<"
+  echo ">>> 小说精品屋后�? PID = $pidf �?始停�? <<<"
   kill $pidf
   rm -rf $PID
   sleep 2
   is_exist
   if [ $? -eq "0" ]; then 
-    echo ">>> 小说精品屋后台 PID = $pid 开始强制停止 <<<"
+    echo ">>> 小说精品屋后�? PID = $pid �?始强制停�? <<<"
     kill -9  $pid
     sleep 2
     status 
@@ -57,13 +57,13 @@ stop(){
   fi  
 }
 
-#输出运行状态
+#输出运行状�??
 status(){
   is_exist
   if [ $? -eq "0" ]; then
-    echo ">>> 小说精品屋后台正在运行 PID = ${pid} <<<"
+    echo ">>> 小说精品屋后台正在运�? PID = ${pid} <<<"
   else
-    echo ">>> 小说精品屋后台没有运行 <<<"
+    echo ">>> 小说精品屋后台没有运�? <<<"
   fi
 }
 
@@ -73,7 +73,7 @@ restart(){
   start
 }
 
-#根据输入参数，选择执行对应方法，不输入则执行使用说明
+#根据输入参数，�?�择执行对应方法，不输入则执行使用说�?
 case "$1" in
   "start")
     start
